@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/AtCoder - AtCoder Beginner Contest 360/A - A Healthy Breakfast" />
+      <excludeFolder url="file://$MODULE_DIR$/AtCoder - AtCoder Beginner Contest 360/B - Vertical Reading" />
+      <excludeFolder url="file://$MODULE_DIR$/Codeforces - Codeforces Beta Round 4 Div 2 Only/A. Watermelon" />
+      <excludeFolder url="file://$MODULE_DIR$/Codeforces - Codeforces Beta Round 4 Div 2 Only/B. Before an Exam" />
+      <excludeFolder url="file://$MODULE_DIR$/HackerRank - Interview Preparation Kits - 3 Months Preparation Kit - Week 3 - Maximum Perimeter Triangle - Prepare - Interview Preparation Kits - 3 Months Preparation Kit - Week 3/Maximum Perimeter Triangle" />
+      <excludeFolder url="file://$MODULE_DIR$/AtCoder - AtCoder Beginner Contest 075/B - Minesweeper" />
+      <excludeFolder url="file://$MODULE_DIR$/AtCoder - AtCoder Beginner Contest 104/B - AcCepted" />
+      <excludeFolder url="file://$MODULE_DIR$/AtCoder - AtCoder Beginner Contest 118/B - Foods Loved by Everyone" />
+      <excludeFolder url="file://$MODULE_DIR$/Codeforces - Codeforces Round 378 Div 2/A. Grasshopper And the String" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/Balanced Bracket Sequence" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/Convex Polygon Triangulation" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/Count of Binary Strings" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/Maximum Score" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/Longest Distinct Subarray AZ101" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/Minimum Penalty" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/Number of Subarray with at most K distinct" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/Number of Subarray with sum at most K" />
+      <excludeFolder url="file://$MODULE_DIR$/AlgoZenith/XORMax" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
