@@ -30,5 +30,10 @@ bin/
 ### Mac OS ###
 .DS_Store
 
+### Competitive Programming extension caches ###
+# CPH (Competitive Programming Helper, VS Code) and JHelper (IntelliJ) keep
+# their own problem/testcase databases. Sample I/O for problems is committed
+# under problems/**/tests/ instead, so these caches are safe to ignore.
+**/.cph/
 **/.autocp
 
