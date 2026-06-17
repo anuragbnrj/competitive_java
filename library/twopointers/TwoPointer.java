@@ -1,4 +1,4 @@
-package library;
+package library.twopointers;
 
 //  Number of Subarray with at most K distinct
 // 2024-08-03 13:58
@@ -238,4 +238,3 @@ public class TwoPointer {
 /*
 1. For cyclic shifts append original string / arr 2 times. eg: String s = abc, String duplicate = abcabc
  */
-

@@ -1,4 +1,4 @@
-package library.slidingwindow;
+package library.twopointers;
 
 public class TemplateAlgozenith {
 
