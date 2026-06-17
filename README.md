@@ -8,15 +8,24 @@ indexed by the IDE and every problem stays a standalone, submittable `Main.java`
 ```
 competitive/
 ├── library/            # reusable code — the only IDE source root
-│   ├── *.java          #   package library         (Pair, Trie, TwoPointer, ...)
+│   ├── *.java          #   package library         (Pair, ...)
 │   ├── templates/       #   package library.templates          (canonical Template.java)
 │   │   └── archive/     #   package library.templates.archive  (legacy templates)
 │   ├── io/             #   package library.io      (fast I/O variants)
 │   ├── graphs/         #   package library.graphs
+│   ├── heaps/          #   package library.heaps          (PriorityQueue patterns)
 │   ├── math/           #   package library.math
 │   ├── segmenttree/    #   package library.segmenttree
 │   ├── slidingwindow/  #   package library.slidingwindow
-│   └── collectionssyntax/
+│   ├── binarysearch/   #   package library.binarysearch
+│   ├── collectionssyntax/  # package library.collectionssyntax
+│   ├── strings/        #   package library.strings
+│   ├── prefixsum/      #   package library.prefixsum
+│   ├── monotonic/      #   package library.monotonic
+│   ├── bits/           #   package library.bits
+│   ├── intervals/      #   package library.intervals
+│   ├── trie/           #   package library.trie
+│   └── twopointers/    #   package library.twopointers
 ├── reference/
 │   └── atcoder-library/   # vendored AtCoder Library (ACL) port — third-party reference, not ours
 ├── interview/
@@ -40,6 +49,12 @@ no spaces, no platform name repeated in the slug. Examples:
 
 AlgoZenith problems aren't grouped into contests, so they sit directly under
 `problems/algozenith/<problem-slug>/`.
+
+Most `library/` subfolders (`graphs/`, `heaps/`, `binarysearch/`,
+`collectionssyntax/`, `slidingwindow/`, `segmenttree/`, `math/`, `strings/`,
+`prefixsum/`, `monotonic/`, `bits/`, `intervals/`, `trie/`, `twopointers/`) carry a `NOTES.md` — a
+revision cheat-sheet (decision guide, edge-case gotchas, active-recall Q&A, and
+curated practice links) for interview / OA prep.
 
 ## Why `problems/` is excluded from the module
 
