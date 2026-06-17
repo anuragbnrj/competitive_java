@@ -1,63 +1,44 @@
 package library.collectionssyntax;
 
-import java.util.Iterator;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class TreeMapSyntax {
 
+    // ---------------------------------------------------------------
+    // TreeMap - a sorted map (red-black tree). O(log n) get/put, keys
+    // iterated in ascending order. Use it when you need order +
+    // nearest-key queries: ceiling/floor/higher/lower, firstKey/
+    // lastKey, headMap/tailMap/subMap.
+    //
+    //   ceilingKey(x) : smallest key >= x
+    //   higherKey(x)  : smallest key >  x
+    //   floorKey(x)   : largest  key <= x
+    //   lowerKey(x)   : largest  key <  x
+    //
+    // GOTCHAS:
+    //   - These return null when no such key exists - guard before
+    //     unboxing (unboxing null -> NPE).
+    //   - TreeMap rejects null keys (NullPointerException).
+    // ---------------------------------------------------------------
     public static void main(String[] args) {
         TreeMap<Integer, Integer> treeMap = new TreeMap<>();
-        treeMap.put(1, 1);
-        treeMap.put(2, 2);
-        treeMap.put(3, 3);
-        treeMap.put(4, 4);
-        treeMap.put(5, 5);
-        treeMap.put(6, 6);
-        treeMap.put(7, 7);
-        treeMap.put(8, 8);
-        treeMap.put(9, 9);
-        treeMap.put(10, 10);
+        for (int i = 1; i <= 10; i++) treeMap.put(i, i * 10);
 
-        // -------------------- Traverse a Tree Map --------------------
-        Iterator<Map.Entry<Integer, Integer>> iterator = treeMap.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry<Integer, Integer> entry = iterator.next();
-            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
-        }
+        // Iterated in ascending key order (unlike HashMap)
+        System.out.println(treeMap.keySet());   // expect: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        System.out.println(treeMap.firstKey() + " " + treeMap.lastKey()); // expect: 1 10
 
-        for (Map.Entry<Integer, Integer> entry : treeMap.entrySet()) {
-            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
-        }
+        int searchKey = 4;
+        System.out.println(treeMap.ceilingKey(searchKey)); // expect: 4 (>= 4)
+        System.out.println(treeMap.higherKey(searchKey));  // expect: 5 (> 4)
+        System.out.println(treeMap.floorKey(searchKey));   // expect: 4 (<= 4)
+        System.out.println(treeMap.lowerKey(searchKey));   // expect: 3 (< 4)
 
-        treeMap.forEach((k, v) -> {
-            System.out.println(k + " : " + v);
-        });
+        // No such key -> null (e.g. nothing strictly above the max)
+        System.out.println(treeMap.higherKey(10));         // expect: null
 
-        for (Integer key : treeMap.keySet()) {
-            System.out.println("Key: " + key + ", Value: " + treeMap.get(key));
-        }
-
-        for (Integer value : treeMap.values()) {
-            System.out.println("Value: " + value);
-        }
-        // ------------------------------------------------------------
-
-
-        Integer searchKey = 4;
-        System.out.println("Search Key: " + searchKey);
-
-        Integer greaterThanEqual = treeMap.ceilingKey(searchKey);
-        System.out.println("Greater than or equal to " + searchKey + " : " + greaterThanEqual + " | Value: " + treeMap.get(greaterThanEqual));
-
-        Integer greaterThan = treeMap.higherKey(searchKey);
-        System.out.println("Greater than " + searchKey + " : " + greaterThan + " | Value: " + treeMap.get(greaterThan));
-
-        Integer lesserThanEqual = treeMap.floorKey(searchKey);
-        System.out.println("Lesser than or equal to " + searchKey + " : " + lesserThanEqual + " | Value: " + treeMap.get(lesserThanEqual));
-
-        Integer lesserThan = treeMap.lowerKey(searchKey);
-        System.out.println("Lesser than " + searchKey + " : " + lesserThan + " | Value: " + treeMap.get(lesserThan));
+        // Range views (subMap is [from, to) by default)
+        System.out.println(treeMap.subMap(3, 6).keySet()); // expect: [3, 4, 5]
     }
 
 }

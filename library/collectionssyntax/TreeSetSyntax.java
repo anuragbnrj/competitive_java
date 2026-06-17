@@ -4,37 +4,37 @@ import java.util.TreeSet;
 
 public class TreeSetSyntax {
 
+    // ---------------------------------------------------------------
+    // TreeSet - a sorted, de-duplicated set (red-black tree). O(log n)
+    // add/contains, iterated in ascending order. The set analogue of
+    // TreeMap; use it for "sorted unique" + nearest-element queries.
+    //
+    //   ceiling(x) : smallest element >= x
+    //   higher(x)  : smallest element >  x
+    //   floor(x)   : largest  element <= x
+    //   lower(x)   : largest  element <  x
+    //
+    // GOTCHAS:
+    //   - These return null when no such element exists - guard before
+    //     unboxing.
+    //   - TreeSet rejects null elements (NullPointerException).
+    // ---------------------------------------------------------------
     public static void main(String[] args) {
         TreeSet<Integer> treeSet = new TreeSet<>();
-        treeSet.add(1);
-        treeSet.add(2);
-        treeSet.add(3);
-        treeSet.add(4);
-        treeSet.add(5);
-        treeSet.add(6);
-        treeSet.add(7);
-        treeSet.add(8);
-        treeSet.add(9);
-        treeSet.add(10);
+        for (int i = 1; i <= 10; i++) treeSet.add(i);
+        treeSet.add(5);  // duplicate ignored
 
-        treeSet.forEach(k -> System.out.print(k + "\t"));
-        System.out.println();
+        System.out.println(treeSet);             // expect: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        System.out.println(treeSet.first() + " " + treeSet.last()); // expect: 1 10
 
-        Integer searchElement = 3;
-        System.out.println("Search Element: " + searchElement);
+        int x = 3;
+        System.out.println(treeSet.ceiling(x));  // expect: 3 (>= 3)
+        System.out.println(treeSet.higher(x));   // expect: 4 (> 3)
+        System.out.println(treeSet.floor(x));    // expect: 3 (<= 3)
+        System.out.println(treeSet.lower(x));    // expect: 2 (< 3)
 
-
-        Integer greaterThanEqual = treeSet.ceiling(searchElement);
-        System.out.println("GTE: " + greaterThanEqual);
-
-        Integer greaterThan = treeSet.higher(searchElement);
-        System.out.println("GT: " + greaterThan);
-
-        Integer lessThanEqual = treeSet.floor(searchElement);
-        System.out.println("LTE: " + lessThanEqual);
-
-        Integer lessThan = treeSet.lower(searchElement);
-        System.out.println("LT: " + lessThan);
+        // No such element -> null
+        System.out.println(treeSet.lower(1));    // expect: null
     }
 
 }
