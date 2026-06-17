@@ -76,4 +76,16 @@ public class SegmentTreeMax {
 
         return Math.max(leftMax, rightMax);
     }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 5, 7, 9, 11};
+        SegmentTreeMax st = new SegmentTreeMax(arr);
+
+        System.out.println(st.query(0, 5)); // expect: 11 (max of whole array)
+        System.out.println(st.query(1, 3)); // expect: 7  (max of [3,5,7])
+
+        st.update(1, 10);
+        System.out.println(st.query(0, 2)); // expect: 10 (max of [1,10,5] after update)
+        System.out.println(st.query(4, 5)); // expect: 11 (max of [9,11])
+    }
 }

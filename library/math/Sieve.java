@@ -31,13 +31,12 @@ public class Sieve {
 
     public static void main(String[] args) {
         int n = 20;
-        boolean[] primes = getSieve(n);
+        boolean[] isPrime = getSieve(n);
 
-        System.out.println("Prime numbers up to " + n + ":");
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i <= n; i++) {
-            if (primes[i]) {
-                System.out.print(i + " ");
-            }
+            if (isPrime[i]) sb.append(i).append(' ');
         }
+        System.out.println(sb.toString().trim()); // expect: 2 3 5 7 11 13 17 19
     }
 }
