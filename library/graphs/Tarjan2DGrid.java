@@ -10,7 +10,25 @@ public class Tarjan2DGrid {
         return ans;
     }
 
-    class ArticulationPoints {
+    public static void main(String[] args) {
+        Tarjan2DGrid solver = new Tarjan2DGrid();
+
+        // Single land cell: removing it leaves 0 islands -> 1 day
+        System.out.println("[[1]] (expect 1): " + solver.minDays(new int[][]{{1}}));
+
+        // Two adjacent cells: need 2 removals -> 2 days
+        System.out.println("[[1, 1]] (expect 2): " + solver.minDays(new int[][]{{1, 1}}));
+
+        // LeetCode 1568 example: a 2x2 block -> 2 days
+        System.out.println("2x2 block (expect 2): " + solver.minDays(new int[][]{
+            {0, 1, 1, 0}, {0, 1, 1, 0}, {0, 0, 0, 0}}));
+
+        // Already disconnected (two separate cells) -> 0 days
+        System.out.println("Already split (expect 0): " + solver.minDays(new int[][]{
+            {1, 0, 1}}));
+    }
+
+    private static class ArticulationPoints {
         private static int time;
         private static int[][] tin, low;
         private static boolean[][] visited;
